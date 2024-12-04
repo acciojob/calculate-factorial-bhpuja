@@ -1,16 +1,37 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
 </head>
-
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <script>
+        // Function to calculate factorial
+        function calculateFactorial(num) {
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+            return factorial;
+        }
 
+        // Get input from the user
+        let number = prompt("Enter a positive integer (between 1 and 10):");
+
+        // Convert input to a number
+        number = parseInt(number);
+
+        // Check if the input is a valid number
+        if (isNaN(number) || number < 1 || number > 10) {
+            alert("Please enter a valid number between 1 and 10.");
+        } else {
+            // Calculate factorial
+            let result = calculateFactorial(number);
+
+            // Display the result
+            alert("The factorial of " + number + " is " + result);
+        }
+    </script>
 </body>
-
 </html>
